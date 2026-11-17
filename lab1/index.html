@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JavaScript — история и обзор языка</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="top">
+
+  <header>
+    <h1>JavaScript: история и обзор языка</h1>
+  </header>
+
+  <main>
+    <nav>
+      <p><strong>Содержание</strong></p>
+      <ol>
+        <li><a href="#history">История создания</a></li>
+        <li><a href="#overview">Краткий обзор языка</a></li>
+        <li><a href="#examples">Примеры кода</a></li>
+        <li><a href="#used">Использованные теги и CSS-свойства</a></li>
+      </ol>
+    </nav>
+
+    <section id="history">
+      <h2>1. История создания</h2>
+
+      <img class="img-left" src="images/browser.svg" width="240" height="160" alt="Окно браузера со страницей">
+      <p><b>JavaScript</b> появился в <mark>1995 году</mark> в компании Netscape Communications. Его автор &mdash; <strong>Брендан Эйх</strong> (<i>Brendan Eich</i>), который написал первую версию примерно за десять дней. Нужен был простой язык, чтобы «оживлять» страницы в браузере Netscape Navigator: проверять формы, реагировать на клики, менять содержимое страницы.</p>
+
+      <p>Сначала язык назывался <em>Mocha</em>, затем <em>LiveScript</em>, а в декабре 1995 года получил название <strong>JavaScript</strong>. Название выбрали из маркетинговых соображений, чтобы использовать популярность языка Java<sup>1</sup>, хотя общего у этих языков мало.</p>
+
+      <img class="img-right" src="images/server.svg" width="200" height="180" alt="Серверные стойки">
+      <p>В 1996 году Microsoft выпустила собственную реализацию &mdash; <u>JScript</u>, и это породило несовместимость браузеров. Чтобы навести порядок, язык стандартизировали: в 1997 году вышла первая редакция стандарта <abbr title="European Computer Manufacturers Association">ECMA</abbr>-262, известного как <q>ECMAScript</q>. В 2008 году Google выпустила браузер Chrome с быстрым движком V8, а в 2009 году Райан Дал создал на его основе платформу <i>Node.js</i>, позволившую запускать JavaScript на сервере.</p>
+
+      <blockquote>
+        <p>«Любое приложение, которое может быть написано на JavaScript, в конце концов будет написано на JavaScript».</p>
+        <cite>Закон Этвуда, 2007 год</cite>
+      </blockquote>
+
+      <figure>
+        <img src="images/timeline.svg" width="560" height="140" alt="Хронология развития JavaScript">
+        <figcaption>Рисунок 1. Основные даты в истории JavaScript</figcaption>
+      </figure>
+
+      <p>Подробнее об истории языка можно прочитать в <a href="https://ru.wikipedia.org/wiki/JavaScript" target="_blank">статье Википедии</a>. Перейти к описанию возможностей языка: <a href="#overview">краткий обзор</a>.</p>
+
+      <p>Основные этапы развития стандарта:</p>
+      <table>
+        <caption>Таблица 1. Версии стандарта ECMAScript</caption>
+        <thead>
+          <tr>
+            <th scope="col">Версия</th>
+            <th scope="col">Год</th>
+            <th scope="col">Что появилось</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <td colspan="3">Начиная с 2015 года новые версии стандарта выходят ежегодно.</td>
+          </tr>
+        </tfoot>
+        <tbody>
+          <tr><td>ES1</td><td>1997</td><td>Первая редакция стандарта</td></tr>
+          <tr><td>ES3</td><td>1999</td><td>Регулярные выражения, <code>try/catch</code></td></tr>
+          <tr><td>ES5</td><td>2009</td><td>Строгий режим, <code>JSON</code>, методы массивов</td></tr>
+          <tr><td>ES6 (ES2015)</td><td>2015</td><td>Классы, модули, стрелочные функции, <code>let</code> и <code>const</code></td></tr>
+          <tr><td>ES2017</td><td>2017</td><td><code>async</code>/<code>await</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <hr>
+
+    <section id="overview">
+      <h2>2. Краткий обзор языка</h2>
+      <p>JavaScript &mdash; высокоуровневый интерпретируемый язык с динамической типизацией. Сегодня он используется почти везде: в браузерах, на серверах, в мобильных и десктопных приложениях.</p>
+
+      <p>Ключевые особенности языка:</p>
+      <ul class="list-bullet">
+        <li>динамическая типизация: тип имеют значения, а не переменные;</li>
+        <li>функции являются <em>объектами первого класса</em>;</li>
+        <li>объектная модель основана на прототипах;</li>
+        <li>однопоточное выполнение и событийный цикл (event loop).</li>
+      </ul>
+
+      <p>Где применяется JavaScript:</p>
+      <ul class="list-image">
+        <li>интерактивные веб-страницы (DOM, события);</li>
+        <li>серверная разработка (Node.js);</li>
+        <li>мобильные приложения (React Native);</li>
+        <li>десктопные приложения (Electron).</li>
+      </ul>
+
+      <p>Чтобы начать писать на JavaScript, нужно:</p>
+      <ol>
+        <li>установить редактор кода;</li>
+        <li>создать файл с расширением <code>.js</code> или добавить тег <code>&lt;script&gt;</code> в HTML;</li>
+        <li>открыть страницу в браузере;</li>
+        <li>нажать <kbd>F12</kbd>, чтобы увидеть консоль и ошибки.</li>
+      </ol>
+
+      <p>Типы данных в языке: <code>Number</code>, <code>String</code>, <code>Boolean</code>, <code>Null</code>, <code>Undefined</code>, <code>Symbol</code>, <code>BigInt</code> и <code>Object</code>. Для описания терминов:</p>
+      <dl>
+        <dt><strong>DOM</strong></dt>
+        <dd>объектная модель документа, через которую скрипт управляет страницей;</dd>
+        <dt><strong>Node.js</strong></dt>
+        <dd>среда выполнения JavaScript вне браузера.</dd>
+      </dl>
+
+      <p>Устаревший способ объявления <del><code>var</code></del> лучше заменять на <ins><code>let</code> и <code>const</code></ins>. Справочник по языку: <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript" target="_blank">MDN Web Docs</a>.</p>
+      <p>Формула для примера: H<sub>2</sub>O и x<sup>2</sup>.<br>Перейти к <a href="#examples">примерам кода</a>.</p>
+    </section>
+
+    <hr>
+
+    <section id="examples">
+      <h2>3. Примеры кода</h2>
+
+      <p>Код оформлен с цветовой подсветкой элементов, как в темной теме редактора кода (по аналогии с VS Code Dark+). Что каким цветом выделено:</p>
+      <p class="legend"><span class="kw">const, function</span> &mdash; ключевые слова; <span class="str">"строка"</span> &mdash; строки; <span class="num">123</span> &mdash; числа; <span class="com">// комментарий</span> &mdash; комментарии; <span class="fn">greet()</span> &mdash; функции; <span class="var">user</span> &mdash; переменные.</p>
+
+      <p><strong>Пример 1.</strong> Переменные и функция:</p>
+      <pre><code><span class="com">// Объявление переменных и функции</span>
+<span class="kw">const</span> <span class="var">name</span> <span class="op">=</span> <span class="str">"Мир"</span><span class="op">;</span>
+<span class="kw">let</span> <span class="var">count</span> <span class="op">=</span> <span class="num">3</span><span class="op">;</span>
+
+<span class="kw">function</span> <span class="fn">greet</span><span class="op">(</span><span class="var">user</span><span class="op">)</span> <span class="op">{</span>
+  <span class="kw">return</span> <span class="str">`Привет, ${user}!`</span><span class="op">;</span>
+<span class="op">}</span>
+
+<span class="var">console</span><span class="op">.</span><span class="fn">log</span><span class="op">(</span><span class="fn">greet</span><span class="op">(</span><span class="var">name</span><span class="op">)</span><span class="op">)</span><span class="op">;</span></code></pre>
+
+      <p><strong>Пример 2.</strong> Работа с массивом:</p>
+      <pre><code><span class="kw">const</span> <span class="var">numbers</span> <span class="op">=</span> <span class="op">[</span><span class="num">1</span><span class="op">,</span> <span class="num">2</span><span class="op">,</span> <span class="num">3</span><span class="op">,</span> <span class="num">4</span><span class="op">,</span> <span class="num">5</span><span class="op">]</span><span class="op">;</span>
+
+<span class="com">// Возводим числа в квадрат и оставляем чётные</span>
+<span class="kw">const</span> <span class="var">squares</span> <span class="op">=</span> <span class="var">numbers</span><span class="op">.</span><span class="fn">map</span><span class="op">(</span><span class="var">n</span> <span class="op">=</span><span class="op">&gt;</span> <span class="var">n</span> <span class="op">*</span> <span class="var">n</span><span class="op">)</span><span class="op">;</span>
+<span class="kw">const</span> <span class="var">even</span> <span class="op">=</span> <span class="var">squares</span><span class="op">.</span><span class="fn">filter</span><span class="op">(</span><span class="var">n</span> <span class="op">=</span><span class="op">&gt;</span> <span class="var">n</span> <span class="op">%</span> <span class="num">2</span> <span class="op">=</span><span class="op">=</span><span class="op">=</span> <span class="num">0</span><span class="op">)</span><span class="op">;</span>
+
+<span class="var">console</span><span class="op">.</span><span class="fn">log</span><span class="op">(</span><span class="var">squares</span><span class="op">)</span><span class="op">;</span> <span class="com">// [1, 4, 9, 16, 25]</span>
+<span class="var">console</span><span class="op">.</span><span class="fn">log</span><span class="op">(</span><span class="var">even</span><span class="op">)</span><span class="op">;</span>    <span class="com">// [4, 16]</span></code></pre>
+
+      <p><strong>Пример 3.</strong> Обработка события на странице:</p>
+      <pre><code><span class="kw">const</span> <span class="var">button</span> <span class="op">=</span> <span class="var">document</span><span class="op">.</span><span class="fn">querySelector</span><span class="op">(</span><span class="str">"#btn"</span><span class="op">)</span><span class="op">;</span>
+
+<span class="var">button</span><span class="op">.</span><span class="fn">addEventListener</span><span class="op">(</span><span class="str">"click"</span><span class="op">,</span> <span class="op">(</span><span class="op">)</span> <span class="op">=</span><span class="op">&gt;</span> <span class="op">{</span>
+  <span class="fn">alert</span><span class="op">(</span><span class="str">"Кнопка нажата!"</span><span class="op">)</span><span class="op">;</span>
+<span class="op">}</span><span class="op">)</span><span class="op">;</span></code></pre>
+    </section>
+
+    <hr>
+
+    <section id="used">
+      <h2>4. Использованные теги и CSS-свойства</h2>
+      <p>HTML-теги (всего 53):</p>
+      <ul class="used">
+        <li>&lt;a&gt;</li>
+        <li>&lt;abbr&gt;</li>
+        <li>&lt;b&gt;</li>
+        <li>&lt;blockquote&gt;</li>
+        <li>&lt;body&gt;</li>
+        <li>&lt;br&gt;</li>
+        <li>&lt;caption&gt;</li>
+        <li>&lt;cite&gt;</li>
+        <li>&lt;code&gt;</li>
+        <li>&lt;dd&gt;</li>
+        <li>&lt;del&gt;</li>
+        <li>&lt;dl&gt;</li>
+        <li>&lt;dt&gt;</li>
+        <li>&lt;em&gt;</li>
+        <li>&lt;figcaption&gt;</li>
+        <li>&lt;figure&gt;</li>
+        <li>&lt;footer&gt;</li>
+        <li>&lt;h1&gt;</li>
+        <li>&lt;h2&gt;</li>
+        <li>&lt;head&gt;</li>
+        <li>&lt;header&gt;</li>
+        <li>&lt;hr&gt;</li>
+        <li>&lt;html&gt;</li>
+        <li>&lt;i&gt;</li>
+        <li>&lt;img&gt;</li>
+        <li>&lt;ins&gt;</li>
+        <li>&lt;kbd&gt;</li>
+        <li>&lt;li&gt;</li>
+        <li>&lt;link&gt;</li>
+        <li>&lt;main&gt;</li>
+        <li>&lt;mark&gt;</li>
+        <li>&lt;meta&gt;</li>
+        <li>&lt;nav&gt;</li>
+        <li>&lt;ol&gt;</li>
+        <li>&lt;p&gt;</li>
+        <li>&lt;pre&gt;</li>
+        <li>&lt;q&gt;</li>
+        <li>&lt;section&gt;</li>
+        <li>&lt;small&gt;</li>
+        <li>&lt;span&gt;</li>
+        <li>&lt;strong&gt;</li>
+        <li>&lt;sub&gt;</li>
+        <li>&lt;sup&gt;</li>
+        <li>&lt;table&gt;</li>
+        <li>&lt;tbody&gt;</li>
+        <li>&lt;td&gt;</li>
+        <li>&lt;tfoot&gt;</li>
+        <li>&lt;th&gt;</li>
+        <li>&lt;thead&gt;</li>
+        <li>&lt;title&gt;</li>
+        <li>&lt;tr&gt;</li>
+        <li>&lt;u&gt;</li>
+        <li>&lt;ul&gt;</li>
+      </ul>
+      <p>CSS-свойства (всего 48):</p>
+      <ul class="used">
+        <li>background-color</li>
+        <li>border</li>
+        <li>border-bottom</li>
+        <li>border-collapse</li>
+        <li>border-left</li>
+        <li>border-radius</li>
+        <li>bottom</li>
+        <li>box-shadow</li>
+        <li>caption-side</li>
+        <li>clear</li>
+        <li>color</li>
+        <li>column-count</li>
+        <li>column-gap</li>
+        <li>cursor</li>
+        <li>display</li>
+        <li>float</li>
+        <li>font-family</li>
+        <li>font-size</li>
+        <li>font-style</li>
+        <li>font-weight</li>
+        <li>height</li>
+        <li>letter-spacing</li>
+        <li>line-height</li>
+        <li>list-style-image</li>
+        <li>list-style-type</li>
+        <li>margin</li>
+        <li>margin-top</li>
+        <li>max-width</li>
+        <li>opacity</li>
+        <li>overflow</li>
+        <li>overflow-x</li>
+        <li>padding</li>
+        <li>padding-bottom</li>
+        <li>padding-left</li>
+        <li>position</li>
+        <li>right</li>
+        <li>src</li>
+        <li>tab-size</li>
+        <li>text-align</li>
+        <li>text-decoration</li>
+        <li>text-indent</li>
+        <li>text-shadow</li>
+        <li>text-transform</li>
+        <li>transition</li>
+        <li>vertical-align</li>
+        <li>white-space</li>
+        <li>width</li>
+        <li>z-index</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>JavaScript &middot; <a href="#top">Наверх</a></p>
+  </footer>
+
+</body>
+</html>
