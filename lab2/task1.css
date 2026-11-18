@@ -1,0 +1,32 @@
+.screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.number {
+  display: flex;
+  gap: 40px;
+}
+
+.digit {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.row {
+  display: flex;
+  gap: 4px;
+}
+
+.sq {
+  width: 40px;
+  height: 40px;
+  background-color: #800020;
+}
+
+.empty {
+  visibility: hidden;
+}
